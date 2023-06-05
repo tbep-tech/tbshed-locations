@@ -1,0 +1,27 @@
+---
+title: "Location of non-profits in TBEP boundaries"
+author: 
+  - name: Marcus Beck, <mbeck@tbep.org>
+institute: "Tampa Bay Estuary Program"
+date: "`r Sys.Date()`"
+format:
+  html:
+    theme: cosmo
+    code-tools: 
+      source: https://github.com/tbep-tech/tbshed-locations/blob/main/nonprof.qmd
+execute:
+  echo: false
+  warning: false
+---
+
+```{r}
+library(mapview)
+library(here)
+
+load(file = here('data/nonprofitsloc.RData'))
+```
+
+```{r}
+mapview(nonprofitlocs, label = 'NAME', layer.name = "Non-profit locations")
+```
+
